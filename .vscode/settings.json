@@ -1,0 +1,10 @@
+{
+    "window.autoDetectColorScheme": true,
+    "zenMode.silentNotifications": true,
+    "zenMode.fullScreen": false,
+    "zenMode.hideActivityBar": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.restore": false,
+    "workbench.preferredLightColorTheme": "Default Dark+",
+    "workbench.colorTheme": "Default Dark+"
+}
