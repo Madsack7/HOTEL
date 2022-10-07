@@ -136,6 +136,7 @@ root = Tk()
 root.title("Aw KA HOTEL")
 root.geometry("1000x650")
 root.resizable(False, False)
+root.iconbitmap("image\icone_logo.ico")
 root.attributes("-toolwindow",1)
 root.configure(background='#4B4745')
 
@@ -155,7 +156,7 @@ txtid.place(x=200,y=130,width=160)
 lbltype = Label(root, text="Type_Nourriture", font=("sans serif", 14), background='#60554F', foreground='#FFFFFF')
 lbltype.place(x=0, y=200, width=220)
 
-v2=StringVar()
+v2=customtkinter.StringVar(value="Pizza")
 txttype=customtkinter.CTkComboBox(master=root,height=30,width=40,values=("Pizza","Vin_rouge","hamburger","patê arachide","Salade"),variable=v2, corner_radius=20,fg_color="#FFFFFF")
 txttype.place(x=200,y=196,width=160)
 
@@ -174,7 +175,7 @@ txtdate.place(x=200,y=336,width=160)
 buttrechercher= customtkinter.CTkButton(master=root,text="Rechercher",height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF",command=rechercher)
 buttrechercher.place(x=230,y=510,width=110)
 
-v8=StringVar()
+v8=customtkinter.StringVar(value="type_nourriture")
 type_rechercher=customtkinter.CTkComboBox(master=root,values=("type_nourriture","prix","id","date_achat"),variable=v8,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 type_rechercher.place(x=10,y=450,width=160)
 

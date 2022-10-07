@@ -15,6 +15,7 @@ root=Tk()
 root.title("Aw KA HOTEL")
 root.geometry("1000x650")
 root.attributes("-toolwindow",1)
+root.iconbitmap("image\icone_logo.ico")
 root.resizable(False, False)
 root.configure(background='#4B4745')
 
@@ -47,8 +48,8 @@ entre_numero.place(x=180,y=250,width=160)
 
 lblrole = Label(root, text="Rôle", font=("sans serif", 14), background='#60554F', foreground='#FFFFFF')
 lblrole.place(x=10, y=310, width=60)
-degiskenler=['Gérant','Responsable']
-entre_role=customtkinter.CTkComboBox(master=root,values=degiskenler,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
+v10=customtkinter.StringVar(value="Gérant")
+entre_role=customtkinter.CTkComboBox(master=root,values=("Gérant","Responsable"),variable=v10,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 entre_role.place(x=180,y=310,width=160)
 
 lblemail = Label(root, text="Email", font=("sans serif", 14), background='#60554F', foreground='#FFFFFF')
@@ -69,7 +70,7 @@ v7=StringVar()
 entre_confirmation=customtkinter.CTkEntry(master=root,textvariable=v7,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 entre_confirmation.place(x=180,y=490,width=160)
 
-v8=StringVar()
+v8=customtkinter.StringVar(value="nom")
 type_rechercher=customtkinter.CTkComboBox(master=root,values=("nom","prenom","telephone","role","email"),variable=v8,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 type_rechercher.place(x=10,y=570,width=160)
 

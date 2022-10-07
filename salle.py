@@ -106,6 +106,7 @@ root = Tk()
 root.title("Aw KA HOTEL")
 root.geometry("1000x650")
 root.resizable(False, False)
+root.iconbitmap("image\icone_logo.ico")
 root.attributes("-toolwindow",1)
 root.configure(background='#4B4745')
 
@@ -127,13 +128,14 @@ txtnum_salle = customtkinter.CTkEntry(master=root, height=30, width=40, border_w
 txtnum_salle.place(x=200, y=150, width=160)
 lblprenom = Label(root, text="Cathegorie_Salle", font=("sans serif", 14), background='#60554F', foreground='#D9D9D9')
 lblprenom.place(x=5, y=270, width=200)
+v8=v4=customtkinter.StringVar(value="salle de reunion")
 txtcategorie_salle = customtkinter.CTkComboBox(master=root,values=("salle de reunion","salle des fetes"), border_width=1, corner_radius=20,fg_color="#FFFFFF")
 txtcategorie_salle.place(x=200, y=270, width=160)
 
 buttrechercher = customtkinter.CTkButton(master=root, text="Rechercher", height=30, width=40, border_width=1,command=rechercher,corner_radius=20, fg_color="#FFFFFF")
 buttrechercher.place(x=220, y=500, width=110)
 
-v8=StringVar()
+v8=v4=customtkinter.StringVar(value="num_salle")
 type_rechercher=customtkinter.CTkComboBox(master=root,values=("num_salle","categorie_salle"),variable=v8,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 type_rechercher.place(x=10,y=450,width=160)
 
@@ -144,6 +146,7 @@ txtrechercher.place(x=200,y=450,width=160)
 
 
 def reservation_salle():
+    root.destroy()
     call(["python", "Reservation_salle.py"])
 
 buttmoreservation = customtkinter.CTkButton(master=root, text="Reservation", height=30, width=40, border_width=1,

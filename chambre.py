@@ -110,6 +110,7 @@ fenetre=Tk()
 fenetre.title("AW KA HOTEL")
 fenetre.resizable(False, False)
 fenetre.attributes("-toolwindow",1)
+fenetre.iconbitmap("image\icone_logo.ico")
 fenetre.geometry("1000x650")
 fenetre.config(background='#4B4745')
 
@@ -127,14 +128,14 @@ txtnum_chambre.place(x=230,y=200,width=160)
 lblcategorie = Label(fenetre, text="Cathegorie_Chambre", font=("sans serif", 14), background='#5C4D4D', foreground='#FFFFFF')
 lblcategorie.place(x=5, y=300, width=200)
 
-v4=StringVar()
+v4=customtkinter.StringVar(value="chambre simple")
 txtcategorie=customtkinter.CTkComboBox(master=fenetre,values=("chambre simple","chambre dortoir","chambre double"),variable=v4,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 txtcategorie.place(x=230,y=300,width=160)
 
 buttrechercher= customtkinter.CTkButton(master=fenetre,text="Rechercher",command=rechercher,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF",)
 buttrechercher.place(x=260,y=510,width=110)
 
-v8=StringVar()
+v8=customtkinter.StringVar(value="num_chambre")
 type_rechercher=customtkinter.CTkComboBox(master=fenetre,values=("num_chambre","categorie"),variable=v8,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 type_rechercher.place(x=10,y=450,width=160)
 
@@ -147,6 +148,7 @@ txtrechercher.place(x=230,y=450,width=160)
 texteRechercher.place(x=160,y=510,width=160)"""
 
 def salle():
+    fenetre.destroy()
     call(["python", "Reservation_chambre.py"])
 
 buttReserver= customtkinter.CTkButton(master=fenetre,text="Réservation",height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF",command=salle)

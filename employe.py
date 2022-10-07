@@ -117,7 +117,9 @@ def rechercher():
 root = Tk()
 root.title("Aw KA HOTEL")
 root.geometry("1000x650")
+root.iconbitmap("image\icone_logo.ico")
 root.attributes("-toolwindow",1)
+
 root.resizable(False, False)
 root.configure(background='#4B4745')
 
@@ -160,7 +162,7 @@ txtdate_embauche.place(x=180,y=370,width=160)
 buttrechercher= customtkinter.CTkButton(master=root,text="Rechercher",command=rechercher,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 buttrechercher.place(x=220,y=510,width=110)
 
-v8=StringVar()
+v8=customtkinter.StringVar(value="nom")
 type_rechercher=customtkinter.CTkComboBox(master=root,values=("nom","prenom","salaire","date_embauche","telephone"),variable=v8,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 type_rechercher.place(x=10,y=450,width=160)
 

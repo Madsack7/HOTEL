@@ -33,13 +33,14 @@ x.pack(expand=YES)
 splash_cadre.pack_propagate(False)
 splash_cadre.pack(expand=YES)
 #
-
+index=0
 def main():
     splash_fenetre.destroy()
     fenetre = Tk()
     fenetre.title("AW KA HÔTEL")
     fenetre.geometry("800x700+0+0")
     fenetre.configure(background="#4B4745")
+    fenetre.iconbitmap("image\icone_logo.ico")
     #imag=ImageTk.PhotoImage(Image.open("image\images (5).png"))
     #x=Label(image=imag,font=("Arial",30))
     #x.pack()
@@ -64,7 +65,12 @@ def main():
 
     label_email=customtkinter.CTkLabel(master=frame,text="Email",corner_radius=20,width=100,height=40,fg_color="#4B4745",text_color="#FFFFFF",text_font=("Inter",18))
     label_email.place(y=100,x=50)
-
+    
+    label_info=customtkinter.CTkLabel(master=frame,text="l",corner_radius=20,width=100,height=40,fg_color="#4B4745",text_color="#FFFFFF",text_font=("Inter",18))
+    label_info.place(x=420,y=630)
+    vf=StringVar()
+    #label_info=Label(fenetre,text=l[index],textvariable=vf,bg="#FFFFFF",width=50,font="Inter, 12").place(x=420,y=630)
+    
     label_mdp=customtkinter.CTkLabel(master=frame,text="Mot de passe",corner_radius=20,width=100,height=40,fg_color="#4B4745",text_color="#FFFFFF",text_font=("Inter",18))
     label_mdp.place(y=200,x=50)
     v1=StringVar()
@@ -79,6 +85,7 @@ def main():
     #show_hide_button=customtkinter.CTkButton(frame,text=hide_face,fg_color="#FFFFFF",text_font=('Bold',15),width=15,command=show)
     #show_hide_button.place(y=200,x=660)
     def connecter():
+        
           mdp=entry_mdp.get()
           nb=mdp.__len__()
           if entry_email.get()=="" or entry_mdp.get()=="":
@@ -104,9 +111,13 @@ def main():
                  if output[2]=="Admin":
                       fenetre.destroy()
                       call(["python","dashboard_admin.py"])
-                 else:
+                 elif output[2]=="Gérant":
                      fenetre.destroy()
                      call(["python","dashboard.py"])
+                 else:
+                     fenetre.destroy()
+                     call(["python","dashboard_responsable.py"])
+
              """for i in output:
 
                  if i[0]==entry_email.get() and i[1]==entry_mdp.get():
@@ -137,10 +148,22 @@ def main():
     border_width=2,
     corner_radius=20,
     border_color= "#d3d3d3",
-    fg_color= "#4B4745",command=connecter)
+    fg_color= "#827F7D",command=connecter)
     Button_connecter.place(x=380,y=300)
+    
+    
 
     
+    l=["Bienvenue sur l'application AW KA HÔTEL"," "," "," "," ","S","Si"]
+    def animation():
+        global index
+        label_info.set_text(l[0])
+        index += 1
+        fenetre.after(500,animation)
+
+    
+
+    fenetre.after(1000,animation)
     """a=customtkinter.CTkFrame(fenetre,bg_color="#ffffff",width=800,height=400,corner_radius=20,border_color="#ffffff",border_width=3)
     cadre=customtkinter.CTkFrame(fenetre,bg_color="#60554F")
     s=Label(a,text="CONNEXION", font=("Arial", 20), width=38, height=1, fg="#FFFFFF",bg="#4B4745")

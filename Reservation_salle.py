@@ -9,6 +9,7 @@ from subprocess import call
 root = Tk()
 root.title("Aw KA HOTEL")
 root.geometry("1000x650")
+root.iconbitmap("image\icone_logo.ico")
 root.attributes("-toolwindow",1)
 #root.resizable(False, False)
 root.configure(background='#4B4745')
@@ -119,7 +120,7 @@ lblprix.place(x=30, y=300, width=80)
 txtdprix=customtkinter.CTkEntry(master=root,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 txtdprix.place(x=200,y=300,width=160)
 
-v8=StringVar()
+v8=customtkinter.StringVar(value="nom_client")
 type_rechercher=customtkinter.CTkComboBox(master=root,values=("nom_client","prenom_client","telephone","date_reservation","prix"),variable=v8,height=30,width=40,border_width=1,corner_radius=20,fg_color="#FFFFFF")
 type_rechercher.place(x=10,y=450,width=160)
 
@@ -252,6 +253,7 @@ buttmodifier.place(x=115,y=560,width=100)
 
 def salle():
     root.destroy()
+    call(["python", "salle.py"])
      
 b4 = Button(text='<-',font=("Arial",16),background='#FFFFFF',width=5,command=salle)
 b4.place(x=0, y=30)

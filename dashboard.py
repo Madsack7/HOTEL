@@ -13,6 +13,7 @@ fenetre.title("Hotel")
 fenetre.geometry("1280x720")
 fenetre.minsize(480, 320)
 fenetre.config(background='#4B4745')
+fenetre.iconbitmap("image\icone_logo.ico")
 
 
 
@@ -170,21 +171,21 @@ mydb.close()
 
 # b1 =Button(fenetre,image=photo1, text="",background='#FFFFFF',font=("Inria Sans",30),fg="#000000",width=153).place(x=0,y=1)
 
-b1 = customtkinter.CTkButton(master=frame, hover_color="#302D2B", text="Employé", text_font=("Inter", 25),
+"""b1 = customtkinter.CTkButton(master=frame, hover_color="#302D2B", text="Employé", text_font=("Inter", 25),
                              text_color="#FFFFFF", fg_color="#827F7D", border_width=1, border_color="#827F7D",
-                             corner_radius=20, width=200, height=80, command=employer).place(x=20, y=3)
+                             corner_radius=20, width=200, height=80, command=employer).place(x=0, y=3)"""
 # buttEnregistrer.place(x=10,y=560,width=100)
 b2 = customtkinter.CTkButton(master=frame, hover_color="#302D2B", text="Salle", text_font=("Inter", 25),
                              text_color="#FFFFFF", fg_color="#827F7D", border_width=1, border_color="#827F7D",
-                             corner_radius=20, width=200, height=80, command=salle).place(x=270, y=3)
+                             corner_radius=20, width=200, height=80, command=salle).place(x=0, y=3)
 
 b3 = customtkinter.CTkButton(master=frame, hover_color="#302D2B", text="Client", text_font=("Inter", 25),
                              text_color="#FFFFFF", fg_color="#827F7D", border_width=1, border_color="#827F7D",
-                             corner_radius=20, width=200, height=80, command=client).place(x=530, y=3)
+                             corner_radius=20, width=200, height=80, command=client).place(x=366, y=3)
 
 b4 = customtkinter.CTkButton(master=frame, hover_color="#302D2B", text="Restaurant", text_font=("Inter", 25),
                              text_color="#FFFFFF", fg_color="#827F7D", border_width=1, border_color="#827F7D",
-                             corner_radius=20, width=200, height=80, command=restaurant).place(x=790, y=3)
+                             corner_radius=20, width=200, height=80, command=restaurant).place(x=692, y=3)
 
 b5 = customtkinter.CTkButton(master=frame, hover_color="#302D2B", text="Chambre", text_font=("Inter", 25),
                              text_color="#FFFFFF", fg_color="#827F7D", border_width=1, border_color="#827F7D",
